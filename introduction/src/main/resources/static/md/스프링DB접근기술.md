@@ -9,7 +9,7 @@
 
 
 ### 순수 JDBC
-> - 고대 선밴님들의 방식 ..
+> - 고대 선배님들의 방식 ..
 > - build.gradle 파일에 jdbc, h2 db관련 라이브러리 추가
 > ```text
 >    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
