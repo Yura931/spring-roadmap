@@ -21,14 +21,18 @@ public class AppConfig {
 
     @Bean // 스프링 컨테이너에 등록 됨
     public MemberService memberService() {
-        return new MemberServiceImpl(memberRepository());
+        System.out.println("call AppConfig.memberService");
+        return new MemberServiceImpl(memberRepository());   // Method annotated with @Bean is called directly. Use dependency injection instead. -> @Configuration을 붙이지 않으면 IDE가 알려주는 에러
+
     }
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
